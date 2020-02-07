@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.875" name="BancoCliente">
+  <DataContextMoniker Name="/BancoClienteDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f643c752-06f7-4b86-92e2-598fba79e587" absoluteBounds="0.75, 4, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/BancoClienteDataContext/Cliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae351209-8957-42dd-8597-25e1034692e7" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf39a997-a1a1-4068-8ae3-e20c512197dc" absoluteBounds="0.75, 7, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/BancoClienteDataContext/TipoConexao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5587ba95-6cc1-4bbc-b36f-523341cf1a75" absoluteBounds="0.765, 7.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="867ec4fb-2f40-4e26-9238-e3b503777c40" absoluteBounds="3.5, 6.5, 2, 2.1554996744791657">
+      <DataClassMoniker Name="/BancoClienteDataContext/Conexao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc8e7d05-0944-414c-ad8c-70ed605e4257" absoluteBounds="3.515, 6.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36fa91ed-a042-4be6-9d2f-88e0408f16ac" absoluteBounds="3.5, 4, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/BancoClienteDataContext/ModCli" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7d91a57-69d8-4fad-8447-212793946444" absoluteBounds="3.515, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9b270418-6476-4a25-acfa-e5f422805795" absoluteBounds="0.75, 1, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/BancoClienteDataContext/Modulo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0b7bd1f-56c0-4f6f-9c31-e354566cf8c7" absoluteBounds="0.765, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="07e2e494-1cfa-4392-92ac-3f2d8526b33e" absoluteBounds="3.5, 0.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/BancoClienteDataContext/SenhaSGU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c03c9bac-a6bb-4d60-8d44-911266020547" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 5.19399251302083); (3.125 : 5.56899251302083); (3.125 : 7.57774983723958); (3.5 : 7.57774983723958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BancoClienteDataContext/Cliente/Cliente_Conexao" />
+      <nodes>
+        <classShapeMoniker Id="f643c752-06f7-4b86-92e2-598fba79e587" />
+        <classShapeMoniker Id="867ec4fb-2f40-4e26-9238-e3b503777c40" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.94837117513021); (3.5 : 7.94837117513021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BancoClienteDataContext/TipoConexao/TipoConexao_Conexao" />
+      <nodes>
+        <classShapeMoniker Id="cf39a997-a1a1-4068-8ae3-e20c512197dc" />
+        <classShapeMoniker Id="867ec4fb-2f40-4e26-9238-e3b503777c40" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.56574375651042); (3.04166666666667 : 4.56574375651042 : JumpStart); (3.20833333333333 : 4.56574375651042 : JumpEnd); (3.5 : 4.56574375651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BancoClienteDataContext/Cliente/Cliente_ModCli" />
+      <nodes>
+        <classShapeMoniker Id="f643c752-06f7-4b86-92e2-598fba79e587" />
+        <classShapeMoniker Id="36fa91ed-a042-4be6-9d2f-88e0408f16ac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.19399251302083); (3.125 : 2.56899251302083); (3.125 : 5.00727085091146); (3.5 : 5.00727085091146)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BancoClienteDataContext/Modulo/Modulo_ModCli" />
+      <nodes>
+        <classShapeMoniker Id="9b270418-6476-4a25-acfa-e5f422805795" />
+        <classShapeMoniker Id="36fa91ed-a042-4be6-9d2f-88e0408f16ac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.03214495227364); (3.06607443490112 : 3.71607051737252 : JumpStart); (3.18392556509888 : 3.59821938717476 : JumpEnd); (3.28125 : 3.50089495227364); (3.28125 : 1.63544840494792); (3.5 : 1.63544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BancoClienteDataContext/Cliente/Cliente_SenhaSGU" />
+      <nodes>
+        <classShapeMoniker Id="f643c752-06f7-4b86-92e2-598fba79e587" />
+        <classShapeMoniker Id="07e2e494-1cfa-4392-92ac-3f2d8526b33e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.25522420247396); (3.5 : 1.25522420247396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BancoClienteDataContext/Modulo/Modulo_SenhaSGU" />
+      <nodes>
+        <classShapeMoniker Id="9b270418-6476-4a25-acfa-e5f422805795" />
+        <classShapeMoniker Id="07e2e494-1cfa-4392-92ac-3f2d8526b33e" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

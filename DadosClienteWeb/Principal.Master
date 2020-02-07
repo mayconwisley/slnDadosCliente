@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="DadosClienteWeb.Principal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <link href="Css/Estilo.css" rel="stylesheet" />
+    <title>Dados Cliente</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="main">
+            <div class="navSide radius">
+                <ul>
+                    <li>Cadastro
+                        <ul class="itens">
+                            <li><a href="#">Cliente</a></li>
+                            <li><a href="#">Modulo</a></li>
+                            <li><a href="#">Senha SGU</a></li>
+                            <li><a href="#">ModCli</a></li>
+                            <li><a href="#">Tipo Conexão</a></li>
+                            <li><a href="#">Conexão</a></li>
+                        </ul>
+                    </li>
+                    <li>Consulta
+                        <ul class="itens">
+                            <li><a href="#">Cliente</a></li>
+                            <li><a href="#">Modulo</a></li>
+                            <li><a href="#">Senha SGU</a></li>
+                            <li><a href="#">ModCli</a></li>
+                            <li><a href="#">Tipo Conexão</a></li>
+                            <li><a href="#">Conexão</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="conteudo">
+                <asp:ContentPlaceHolder ID="CplHolder" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="footer">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

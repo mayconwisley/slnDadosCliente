@@ -1,0 +1,48 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main {
+    width: 100%;
+}
+
+.radius {
+    border-radius: 10px;
+}
+
+.navSide {
+    width: 15%;
+    float: left;
+}
+
+    .navSide ul {
+        font-weight: 800;
+    }
+
+        .navSide ul li {
+            list-style: none;
+            
+        }
+
+            .navSide ul li ul {
+                padding: 0 20px;
+                
+            }
+
+                .navSide ul li ul li a {
+                    display: block;
+                    text-decoration: none;
+                    padding: 5px 0;
+                    border-radius: 10px;
+                }
+                .navSide ul li ul li a:hover {
+                    background-color:aqua;
+                }
+
+.conteudo {
+    width: 85%;
+    float: left;
+    background: #00ff21;
+}

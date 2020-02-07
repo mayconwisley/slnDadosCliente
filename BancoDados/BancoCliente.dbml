@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DbCliente" Class="BancoClienteDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=JS04\SQLEXPRESS2017;Initial Catalog=DbCliente;User ID=sa" SettingsObjectName="BancoDados.Properties.Settings" SettingsPropertyName="DbClienteConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cliente" Member="Clientes">
+    <Type Name="Cliente">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_Conexao" Member="Conexaos" ThisKey="Id" OtherKey="Id_Cliente" Type="Conexao" />
+      <Association Name="Cliente_ModCli" Member="ModClis" ThisKey="Id" OtherKey="Id_Cliente" Type="ModCli" />
+      <Association Name="Cliente_SenhaSGU" Member="SenhaSGUs" ThisKey="Id" OtherKey="Id_Cliente" Type="SenhaSGU" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoConexao" Member="TipoConexaos">
+    <Type Name="TipoConexao">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="TipoConexao_Conexao" Member="Conexaos" ThisKey="Id" OtherKey="Id_TipoConexao" Type="Conexao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Conexao" Member="Conexaos">
+    <Type Name="Conexao">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ip" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Porta" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Senha" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Dominio" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Id_Cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_TipoConexao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_Conexao" Member="Cliente" ThisKey="Id_Cliente" OtherKey="Id" Type="Cliente" IsForeignKey="true" />
+      <Association Name="TipoConexao_Conexao" Member="TipoConexao" ThisKey="Id_TipoConexao" OtherKey="Id" Type="TipoConexao" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ModCli" Member="ModClis">
+    <Type Name="ModCli">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Modulo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_ModCli" Member="Cliente" ThisKey="Id_Cliente" OtherKey="Id" Type="Cliente" IsForeignKey="true" />
+      <Association Name="Modulo_ModCli" Member="Modulo" ThisKey="Id_Modulo" OtherKey="Id" Type="Modulo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Modulo" Member="Modulos">
+    <Type Name="Modulo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Modulo_ModCli" Member="ModClis" ThisKey="Id" OtherKey="Id_Modulo" Type="ModCli" />
+      <Association Name="Modulo_SenhaSGU" Member="SenhaSGUs" ThisKey="Id" OtherKey="Id_Modulo" Type="SenhaSGU" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SenhaSGU" Member="SenhaSGUs">
+    <Type Name="SenhaSGU">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Senha" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Modulo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_SenhaSGU" Member="Cliente" ThisKey="Id_Cliente" OtherKey="Id" Type="Cliente" IsForeignKey="true" />
+      <Association Name="Modulo_SenhaSGU" Member="Modulo" ThisKey="Id_Modulo" OtherKey="Id" Type="Modulo" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
